@@ -1,70 +1,107 @@
-const crypto = require('crypto')
-const Sequelize = require('sequelize')
-const db = require('../db')
+const crypto = require("crypto");
+const Sequelize = require("sequelize");
+const db = require("../_db");
 
-const User = db.define('user', {
+const User = db.define("user", {
+  firstName: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      isAlpha: true
+    }
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      isAlpha: true
+    }
+  },
   email: {
     type: Sequelize.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      isEmail: true
+    }
   },
   password: {
     type: Sequelize.STRING,
+    validate: {
+      notEmpty: true
+    },
+    len: [3, 10],
     // Making `.password` act like a func hides it when serializing to JSON.
     // This is a hack to get around Sequelize's lack of a "private" option.
     get() {
-      return () => this.getDataValue('password')
+      return () => this.getDataValue("password");
     }
+  },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
+  isBanned: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
   salt: {
     type: Sequelize.STRING,
     // Making `.salt` act like a function hides it when serializing to JSON.
     // This is a hack to get around Sequelize's lack of a "private" option.
     get() {
-      return () => this.getDataValue('salt')
+      return () => this.getDataValue("salt");
     }
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  favorites: {
+    type: Sequelize.ARRAY(Sequelize.INTEGER)
+  },
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue:
+      "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/03/25053846/Jet-PNG-Image.png"
   }
-})
+});
 
-module.exports = User
+module.exports = User;
 
 /**
  * instanceMethods
  */
 User.prototype.correctPassword = function(candidatePwd) {
-  return User.encryptPassword(candidatePwd, this.salt()) === this.password()
-}
+  return User.encryptPassword(candidatePwd, this.salt()) === this.password();
+};
 
 /**
  * classMethods
  */
 User.generateSalt = function() {
-  return crypto.randomBytes(16).toString('base64')
-}
+  return crypto.randomBytes(16).toString("base64");
+};
 
 User.encryptPassword = function(plainText, salt) {
   return crypto
-    .createHash('RSA-SHA256')
+    .createHash("RSA-SHA256")
     .update(plainText)
     .update(salt)
-    .digest('hex')
-}
+    .digest("hex");
+};
 
 /**
  * hooks
  */
 const setSaltAndPassword = user => {
-  if (user.changed('password')) {
-    user.salt = User.generateSalt()
-    user.password = User.encryptPassword(user.password(), user.salt())
+  if (user.changed("password")) {
+    user.salt = User.generateSalt();
+    user.password = User.encryptPassword(user.password(), user.salt());
   }
-}
+};
 
-User.beforeCreate(setSaltAndPassword)
-User.beforeUpdate(setSaltAndPassword)
+User.beforeCreate(setSaltAndPassword);
+User.beforeUpdate(setSaltAndPassword);
 User.beforeBulkCreate(users => {
-  users.forEach(setSaltAndPassword)
-})
+  users.forEach(setSaltAndPassword);
+});
