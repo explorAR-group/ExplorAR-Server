@@ -1,4 +1,4 @@
-const db = require('./server/db/_db')
+const db = require('./server/db/db.js')
 const {green, red} = require('chalk')
 
 const User = require('./server/db/models/user')
