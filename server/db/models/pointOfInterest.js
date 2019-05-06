@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
-const db = require("../_db");
+const Sequelize = require('sequelize')
+const db = require('../db.js')
 
-const pointOfInterest = db.define("pointOfInterest", {
+const pointOfInterest = db.define('pointOfInterest', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -19,7 +19,7 @@ const pointOfInterest = db.define("pointOfInterest", {
   imageUrl: {
     type: Sequelize.STRING,
     defaultValue:
-      "https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/03/25053846/Jet-PNG-Image.png"
+      'https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/03/25053846/Jet-PNG-Image.png'
   },
   description: {
     type: Sequelize.TEXT
@@ -27,6 +27,6 @@ const pointOfInterest = db.define("pointOfInterest", {
   models: {
     type: Sequelize.ARRAY(Sequelize.STRING)
   }
-});
+})
 
-module.exports = pointOfInterest;
+module.exports = pointOfInterest
