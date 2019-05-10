@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
   try {
     const pointsOfInterest = await PointOfInterest.findAll()
     const searchRequest = {
-      term: 'Coffee',
+      term: 'restaurants',
       location: '10005'
     }
 
