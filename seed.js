@@ -40,25 +40,25 @@ const PointOfInterestArr = [
       "The New York Stock Exchange (NYSE, nicknamed The Big Board)[6] is an American stock exchange located at 11 Wall Street, Lower Manhattan, New York City, New York. It is by far[7][8] the world's largest stock exchange by market capitalization of its listed companies at US$30.1 trillion as of February 2018.[9] "
   },
   {
-    name: 'FullStack Academy',
-    longitude: -74.0091771,
-    latitude: 40.7049455,
+    name: 'NW FullStack Academy',
+    longitude: -74.009947,
+    latitude: 40.705128,
     imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
     description:
       'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?'
   },
   {
     name: 'FarAway1',
-    longitude: -74.0091771,
-    latitude: 40.7049455,
+    longitude: -73.0091771,
+    latitude: 41.7049455,
     imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
     description:
       'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?'
   },
   {
     name: 'FarAway 2',
-    longitude: -73.0080012,
-    latitude: 40.7049455,
+    longitude: -72.0080012,
+    latitude: 39.7049455,
     imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
     description:
       'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?'
