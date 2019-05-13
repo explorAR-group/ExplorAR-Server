@@ -12,35 +12,65 @@ const apiKey =
 module.exports = router
 
 router.get('/', async (req, res, next) => {
-  try {
-    const pointsOfInterest = await PointOfInterest.findAll()
-    const searchRequest = {
-      term: 'restaurants',
-      location: '10005'
-    }
+  const lat = req.query.lat
+  const long = req.query.long
 
+  try {
+    // get DB POIs
+    const pointsOfInterest = await PointOfInterest.findAll()
+
+    //get yelp restaurants list
+    const resSearchRequest = {
+      term: 'restaurants',
+      latitude: lat,
+      longitude: long,
+      limit: 10
+    }
     const client = yelp.client(apiKey)
 
-    client
-      .search(searchRequest)
-      .then(response => {
-        const rawResult = response.jsonBody.businesses
-        // const prettyJson = JSON.stringify(firstResult, null, 4)
-        let cleanResult = rawResult.map(el => {
-          return {
-            name: el.name,
-            longitude: el.coordinates.longitude,
-            latitude: el.coordinates.latitude,
-            imageUrl: el.image_url
-          }
-        })
+    let resResponse = await client.search(resSearchRequest)
 
-        // console.log(firstResult)
-        res.json([...pointsOfInterest, ...cleanResult])
-      })
-      .catch(e => {
-        console.log(e)
-      })
+    const resRawResult = resResponse.jsonBody.businesses
+    let restaurantResult = resRawResult.map(el => {
+      return {
+        id: el.id,
+        name: el.name,
+        longitude: el.coordinates.longitude,
+        latitude: el.coordinates.latitude,
+        imageUrl: el.image_url,
+        yelpRating: el.rating,
+        reviewCount: el.review_count,
+        address: el.location.address1,
+        category: 'Restaurants'
+      }
+    })
+
+    //get yelp bars list
+    const barSearchRequest = {
+      term: 'bars',
+      latitude: lat,
+      longitude: long,
+      limit: 10
+    }
+    let barResponse = await client.search(barSearchRequest)
+
+    const barRawResult = barResponse.jsonBody.businesses
+    let barResult = barRawResult.map(el => {
+      return {
+        id: el.id,
+        name: el.name,
+        longitude: el.coordinates.longitude,
+        latitude: el.coordinates.latitude,
+        imageUrl: el.image_url,
+        yelpRating: el.rating,
+        reviewCount: el.review_count,
+        address: el.location.address1,
+        category: 'Bars'
+      }
+    })
+
+    // send results of DB and Yelp POIs
+    res.json([...pointsOfInterest, ...restaurantResult, ...barResult])
   } catch (err) {
     next(err)
   }
