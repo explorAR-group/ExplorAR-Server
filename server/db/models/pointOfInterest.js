@@ -26,6 +26,10 @@ const pointOfInterest = db.define('pointOfInterest', {
   },
   models: {
     type: Sequelize.ARRAY(Sequelize.STRING)
+  },
+  category: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
