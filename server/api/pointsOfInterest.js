@@ -69,6 +69,10 @@ router.get('/', async (req, res, next) => {
       }
     })
 
+    // de-duplicate bars and restaurants
+    let restaurantIDs = restaurantResult.map(rest => rest.id)
+    barResult = barResult.filter(bar => !restaurantIDs.includes(bar.id))
+
     // send results of DB and Yelp POIs
     res.json([...pointsOfInterest, ...restaurantResult, ...barResult])
   } catch (err) {

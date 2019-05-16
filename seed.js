@@ -14,15 +14,15 @@ const UsersArr = [
   },
   {
     firstName: 'Roberto',
-    lastName: 'login',
-    email: 'a',
-    password: 'a',
+    lastName: 'Brillemourg',
+    email: 'roberto.brillembourg@gmail.com',
+    password: '123',
     isAdmin: true
   },
   {
     firstName: 'John',
     lastName: 'Smith',
-    email: 'jsmith@email.com',
+    email: 'jsmith@gmail.com',
     password: '123',
     isAdmin: false
   }
@@ -30,7 +30,7 @@ const UsersArr = [
 
 const PointOfInterestArr = [
   {
-    name: 'Charging Bull2',
+    name: 'Wall Street Bull',
     longitude: -74.013441,
     latitude: 40.705568,
     imageUrl: 'https://c1.staticflickr.com/7/6028/5921525870_f66936c8cf_b.jpg',
@@ -39,7 +39,7 @@ const PointOfInterestArr = [
     category: 'Attractions'
   },
   {
-    name: 'Wallstreet Exchange Center',
+    name: 'New York Stock Exchange',
     longitude: -74.009103,
     latitude: 40.705059,
     imageUrl:
@@ -49,30 +49,23 @@ const PointOfInterestArr = [
     category: 'Attractions'
   },
   {
-    name: 'NW FullStack Academy',
-    longitude: -74.009947,
-    latitude: 40.705128,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
+    name: 'Federal Hall',
+    longitude: -74.010361,
+    latitude: 40.707215,
+    imageUrl:
+      'https://www.google.com/maps/uv?hl=en&pb=!1s0x89c25a170305a201%3A0x700fdb83dd5cdcf2!2m22!2m2!1i80!2i80!3m1!2i20!16m16!1b1!2m2!1m1!1e1!2m2!1m1!1e3!2m2!1m1!1e5!2m2!1m1!1e4!2m2!1m1!1e6!3m1!7e115!4shttps%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipNfQGwVRuKVfHSF50fLIHTxsBBSMABMYo1tahTz%3Dw239-h160-k-no!5sfederal%20hall%20nyc%20-%20Google%20Search!15sCAQ&imagekey=!1e10!2sAF1QipNfQGwVRuKVfHSF50fLIHTxsBBSMABMYo1tahTz&sa=X&ved=2ahUKEwiO-LXPrqDiAhXu01kKHYNGDhMQoiowEXoECAsQBg',
     description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
+      'Federal Hall is the name given to the first of two historic buildings located at 26 Wall Street, New York City. The original, a Greek Revival structure completed in 1703, served as New Yorks first City Hall. It was the site where the colonial Stamp Act Congress met to draft its message to King George III claiming entitlement to the same rights as the residents of Britain and protesting "taxation without representation".',
     category: 'Attractions'
   },
   {
-    name: 'FarAway1',
-    longitude: -73.0091771,
-    latitude: 41.7049455,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
+    name: 'Trinity Church',
+    longitude: -74.012181,
+    latitude: 40.708104,
+    imageUrl:
+      'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjsobDC4aDiAhVquVkKHcXGChMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.nyc-architecture.com%2FLM%2FLM047-TRINITYCHURCH.htm&psig=AOvVaw283nj9w2_hjDu6ONjkztj1&ust=1558120520335110',
     description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
-    category: 'Attractions'
-  },
-  {
-    name: 'FarAway 2',
-    longitude: -72.0080012,
-    latitude: 39.7049455,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
-    description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
+      'Trinity Church is a historic parish church in the Episcopal Diocese of New York located near the intersection of Wall Street and Broadway in the lower Manhattan section of New York City, New York. Known for both its location and endowment,[4] Trinity is a traditional high church, with an active parish centered around the Episcopal Church and the worldwide Anglican Communion in missionary, outreach, and fellowship.',
     category: 'Attractions'
   }
 ]
