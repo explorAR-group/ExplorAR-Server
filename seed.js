@@ -42,8 +42,7 @@ const PointOfInterestArr = [
     name: 'New York Stock Exchange',
     longitude: -74.009103,
     latitude: 40.705059,
-    imageUrl:
-      'https://wtop.com/wp-content/uploads/2018/07/Financial_Markets_Wall_Street_99131-780x520.jpg',
+    imageUrl: 'https://finviz.com/image.ashx?dow&rev=636934304936963417',
     description:
       "The New York Stock Exchange (NYSE, nicknamed The Big Board)[6] is an American stock exchange located at 11 Wall Street, Lower Manhattan, New York City, New York. It is by far[7][8] the world's largest stock exchange by market capitalization of its listed companies at US$30.1 trillion as of February 2018.[9] ",
     category: 'Attractions'
