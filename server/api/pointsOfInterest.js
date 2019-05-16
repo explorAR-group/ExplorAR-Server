@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const {PointOfInterest} = require('../db/models')
-;('use strict')
 
 const yelp = require('yelp-fusion')
 
