@@ -14,15 +14,15 @@ const UsersArr = [
   },
   {
     firstName: 'Roberto',
-    lastName: 'login',
-    email: 'a',
-    password: 'a',
+    lastName: 'Brillemourg',
+    email: 'roberto.brillembourg@gmail.com',
+    password: '123',
     isAdmin: true
   },
   {
     firstName: 'John',
     lastName: 'Smith',
-    email: 'jsmith@email.com',
+    email: 'jsmith@gmail.com',
     password: '123',
     isAdmin: false
   }
@@ -30,7 +30,7 @@ const UsersArr = [
 
 const PointOfInterestArr = [
   {
-    name: 'Charging Bull2',
+    name: 'Wall St. Bull',
     longitude: -74.013441,
     latitude: 40.705568,
     imageUrl: 'https://c1.staticflickr.com/7/6028/5921525870_f66936c8cf_b.jpg',
@@ -39,7 +39,7 @@ const PointOfInterestArr = [
     category: 'Attractions'
   },
   {
-    name: 'Wallstreet Exchange Center',
+    name: 'NYSE',
     longitude: -74.009103,
     latitude: 40.705059,
     imageUrl: 'https://finviz.com/image.ashx?dow&rev=636934304936963417',
@@ -48,30 +48,22 @@ const PointOfInterestArr = [
     category: 'Attractions'
   },
   {
-    name: 'NW FullStack Academy',
-    longitude: -74.009947,
-    latitude: 40.705128,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
+    name: 'Federal Hall',
+    longitude: -74.010361,
+    latitude: 40.707215,
+    imageUrl:
+      'http://4.bp.blogspot.com/_3k2ilY9vkCY/S-AKl_y6WiI/AAAAAAAAAik/tlHO5kZkTpU/s1600/index3.jpg',
     description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
+      'Federal Hall is the name given to the first of two historic buildings located at 26 Wall Street, New York City. The original, a Greek Revival structure completed in 1703, served as New Yorks first City Hall. It was the site where the colonial Stamp Act Congress met to draft its message to King George III claiming entitlement to the same rights as the residents of Britain and protesting "taxation without representation".',
     category: 'Attractions'
   },
   {
-    name: 'FarAway1',
-    longitude: -73.0091771,
-    latitude: 41.7049455,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
+    name: 'Trinity Church',
+    longitude: -74.012181,
+    latitude: 40.708104,
+    imageUrl: 'https://www.nyc-architecture.com/LM/LM-wurts-trinity-church.jpg',
     description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
-    category: 'Attractions'
-  },
-  {
-    name: 'FarAway 2',
-    longitude: -72.0080012,
-    latitude: 39.7049455,
-    imageUrl: 'https://www.fullstackacademy.com/images/fa-logo@2x.png',
-    description:
-      'Fullstack Academy is a top-ranked coding bootcamp with campuses in NYC, Chicago, and online. Want to become a professional software developer?',
+      'Trinity Church is a historic parish church in the Episcopal Diocese of New York located near the intersection of Wall Street and Broadway in the lower Manhattan section of New York City, New York. Known for both its location and endowment,[4] Trinity is a traditional high church, with an active parish centered around the Episcopal Church and the worldwide Anglican Communion in missionary, outreach, and fellowship.',
     category: 'Attractions'
   }
 ]

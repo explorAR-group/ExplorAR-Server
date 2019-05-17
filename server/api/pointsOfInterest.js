@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const {PointOfInterest} = require('../db/models')
-;('use strict')
 
 const yelp = require('yelp-fusion')
 
@@ -68,6 +67,10 @@ router.get('/', async (req, res, next) => {
         category: 'Bars'
       }
     })
+
+    // de-duplicate bars and restaurants
+    let restaurantIDs = restaurantResult.map(rest => rest.id)
+    barResult = barResult.filter(bar => !restaurantIDs.includes(bar.id))
 
     // send results of DB and Yelp POIs
     res.json([...pointsOfInterest, ...restaurantResult, ...barResult])
